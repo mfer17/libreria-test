@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header Ejemplo</title>
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: #fff;
+      padding: 18px 0 18px 0;
+      border-top: 2px solid #000;
+      box-shadow: none;
+    }
+    .header__logo {
+      margin-left: 240px;
+      margin-right: 32px;
+    }
+    .header__logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+    .header__nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .header__link {
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      text-transform: uppercase;
+    }
+    .header__link:last-child {
+      color: #e60000;
+      position: relative;
+      font-weight: bold;
+    }
+    .header__link:last-child::after {
+      content: '';
+      /* Eliminado el emoji de bolsa de compras */
+    }
+    .header__link--rebajas {
+      color: #e60000;
+      position: relative;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .header__link--rebajas img {
+      height: 18px;
+      width: auto;
+      margin-left: 2px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .header__actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-left: auto;
+      margin-right: 240px;
+    }
+    .header__searchbox {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #888;
+      border-radius: 0;
+      background: #fff;
+      padding: 0 8px;
+      height: 44px;
+      width: 300px;
+    }
+    .header__search {
+      border: none;
+      outline: none;
+      font-size: 17px;
+      width: 100%;
+      background: transparent;
+      padding: 0 8px;
+    }
+    .header__searchicon {
+      color: #888;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+    .header__iconbtn {
+      background: none;
+      border: none;
+      padding: 0 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+      color: #222;
+      width: 32px;
+      height: 32px;
+    }
+    .header__iconbtn svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+    .header__iconbtn:hover {
+      color: #e60000;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo">
+      <a href="/">
+        <img src="https://crocs.com.co/cdn/shop/files/logo_crocs.png?v=1667483006" alt="crocs logo" />
+      </a>
+    </div>
+    <nav class="header__nav">
+      <a href="/mujer" class="header__link">MUJER</a>
+      <a href="/hombre" class="header__link">HOMBRE</a>
+      <a href="/ninos" class="header__link">NIÑOS</a>
+      <a href="/jibbitz-charms" class="header__link">JIBBITZ™ CHARMS</a>
+      <a href="/crocs-at-work" class="header__link">CROCS AT WORK™</a>
+      <a href="/rebajas" class="header__link header__link--rebajas">REBAJAS <img src="https://crocs.com.co/cdn/shop/files/sale_tag.png?v=1670592630" alt="Rebajas" /></a>
+    </nav>
+    <div class="header__actions">
+      <div class="header__searchbox">
+        <input type="text" class="header__search" placeholder="Búsqueda" aria-label="Buscar" />
+        <span class="header__searchicon">
+          <!-- Ícono lupa SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+      </div>
+      <button class="header__iconbtn" title="Favoritos">
+        <!-- Ícono corazón SVG -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.5-1.4-3.9-1.4-5.4 0l-.7.7-.7-.7c-1.5-1.4-3.9-1.4-5.4 0-1.6 1.5-1.6 4 0 5.5l6.1 6.1 6.1-6.1c1.6-1.5 1.6-4 0-5.5z"/></svg>
+      </button>
+      <button class="header__iconbtn" title="Carrito">
+        <!-- Ícono carrito SVG -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6"/></svg>
+      </button>
+    </div>
+  </header>
+  <script>
+    // Ejemplo: mostrar alerta al buscar
+    document.querySelector('.header__search').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        alert('Buscando: ' + this.value);
+      }
+    });
+    // Ejemplo: mostrar alerta al hacer click en carrito
+    document.querySelector('.header__iconbtn[title="Carrito"]').addEventListener('click', function() {
+      alert('Ir al carrito');
+    });
+  </script>
+</body>
+</html>
